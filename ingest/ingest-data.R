@@ -8,4 +8,4 @@ head(iris)
 # Add column names
 names(iris) <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", "Species")
 
-write.csv(MyData, file = "~/data/iris.csv")
+write.csv(iris, file = "/data/iris.csv")

@@ -4,5 +4,11 @@ services:
     build: ingest/.
     image: "test/project1-ingest"
     volumes:
-     - ingest/.:/code
+     - ./ingest/:/code
 
+  train:
+    build: train/.
+    image: "test/tensorflow"
+    volumes:
+      - ./train/:/code
+      - /mnt/data:/data

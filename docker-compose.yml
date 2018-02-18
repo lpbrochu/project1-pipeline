@@ -1,0 +1,8 @@
+version: '3'
+services:
+  load-data:
+    build: ingest/.
+    image: "test/project1-ingest"
+    volumes:
+     - ingest/.:/code
+

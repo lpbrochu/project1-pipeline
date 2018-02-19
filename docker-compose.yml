@@ -4,11 +4,15 @@ services:
     build: ingest/.
     image: "test/project1-ingest"
     volumes:
-     - ./ingest/:/code
+     - /mnt/data/:/data
 
   train:
     build: train/.
-    image: "test/tensorflow"
+    image: "test/iris-train-keras"
     volumes:
-      - ./train/:/code
+      - ./train/:/src
       - /mnt/data:/data
+    ports:
+      - 16006:6006
+    depends_on: 
+      - "load-data"

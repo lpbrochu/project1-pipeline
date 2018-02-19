@@ -1,3 +1,8 @@
-FROM tensorflow/tensorflow
+FROM test/keras-py36
 
-CMD
+ADD . /src
+
+WORKDIR /src
+CMD ["python", "train.py", "/data"]
+
+
